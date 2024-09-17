@@ -1,0 +1,24 @@
+.header {
+
+}
+
+/* Component: SiteView */
+.header__siteView{
+    width: 100%;
+    height: 44px;
+    display:flexbox;
+    justify-content: center;
+    align-content: center;
+}
+
+
+.header__optionSite{
+    width: 50%;
+    height: 1em;
+}
+
+.header__optionUser{
+    width: 50%;
+    height: 1em;
+}
+

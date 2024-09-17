@@ -1,0 +1,137 @@
+<!--
+    Objects needs for works
+    
+-->
+<!DOCTYPE html>
+<html lang="<%- settingGeneral.languaje.Spanish %>">
+    <!--HEAD-->
+    <%- include("../partials/head.ejs") %>
+    <body>
+
+        <!--HEADER-->
+        <%- include('../partials/header.ejs')%>
+
+        
+        <!--Se pasa el objeto a miniBanner-->
+        <!--MiniBanner-->
+        <% minibar = {
+            title:"Admin - Usuario",
+            icon:"eos-icons:admin-outlined"
+        } %> 
+        <%- include('../partials/miniBanner.ejs')%>
+
+        <!--MAIN-->
+        <main>
+            <!--AdminBar-->
+            <%- include('../components/adminBar.ejs')%>
+
+            <!--User-->
+            <section class="user">
+                <!-- <nav class="user__bar flx-ctr">
+                    <h1 class="user__barTitle">Detalles usuario</h1>
+                </nav> -->
+                <form action="/admin/user" method="post" class="user__container">
+                    
+                    <!--names-->
+                    <label class="user__inputText" for="firstName">
+                        Nombres *
+                    </label>
+                    <input type="text" name="firstName" id="firstName" required minlength="2" maxlength="128"
+                    placeholder="Ingrese los nombres...">
+            
+                    <!--last names-->
+                    <label class="user__inputText" for="lastName">
+                        Apellidos *
+                    </label>
+                    <input type="text" name="lastName" id="lastName" required minlength="2" maxlength="128"
+                    placeholder="Ingrese los apellidos...">
+            
+                    <!--Display Elements by row in flex-->
+                    <div class="flx-ctr">
+                        <div class="user__containerMiddle">
+                            <!--date born-->
+                            <label class="user__inputText" for="dateBorn">
+                                Fecha nacimiento *
+                            </label>
+                            <input type="date" name="dateBorn" id="dateBorn" required >
+                        </div>
+            
+                        <div class="user__containerMiddle">
+                            <!--Category-->
+                            <label class="user__inputText" for="gender">
+                                Genero *
+                            </label>
+                            <select name="gender" id="gender" class="user__inputGender" required>
+                                <option value="">Seleccione</option>
+                                <option value="1">Hombre</option>
+                                <option value="2">Mujer</option>
+                                <option value="3">No definido</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <!--email-->
+                    <label class="user__inputText" for="email">
+                        Email *
+                    </label>
+                    <input type="email" name="email" id="email" required minlength="2" maxlength="128 "
+                    placeholder="Ingrese el email">
+            
+                    <!--Country-->
+                    <label class="user__inputText" for="country">
+                        Pais *
+                    </label>
+                    <input type="text" name="country" id="country" required minlength="2" maxlength="128"
+                    placeholder="Ingrese el país...">
+            
+                    <!--province state-->
+                    <label class="user__inputText" for="province-state">
+                        Provincia/Estado *
+                    </label>
+                    <input type="text" name="province-state" id="province-state" required minlength="2" maxlength="128"
+                    placeholder="Ingrese la provincia o estado...">
+            
+                    <!--City town-->
+                    <label class="user__inputText" for="city-town">
+                        Ciudad/Pueblo *
+                    </label>
+                    <input type="text" name="city-town" id="city-town" required minlength="2" maxlength="128"
+                    placeholder="Ingrese la ciudad o el pueblo...">
+            
+                    <!--Address line-->
+                    <label class="user__inputText" for="address">
+                        Dirección *
+                    </label>
+                    <input type="text" name="address" id="address" required minlength="2" maxlength="128"
+                    placeholder="Ingrese la dirección...">
+            
+                    <!--Password-->
+                    <label class="user__inputText" for="password">
+                        Contraseña *
+                    </label>
+                    <input type="password" name="password" id="password" required minlength="2" maxlength="64"
+                    placeholder="Ingrese la contraseña...">
+                    <input type="password" name="password" id="passwordTry" required minlength="2" maxlength="64"
+                    placeholder="Repita la contraseña...">
+            
+                    <!--buttons-->
+                    <div class="flx-ctr">
+                        <button type="reset" class="product__buttons product__buttonClear flx-ctr">
+                            <i class="iconify" data-icon="ic:baseline-restore"></i>
+                            Restablecer
+                        </button>
+                        <button type="submit" class="product__buttons product__buttonSend flx-ctr">
+                            Actualizar datos
+                            <i class="iconify" data-icon="fluent:person-settings-20-regular"></i>
+                        </button>
+                    </div>    
+                </form>
+            </section>
+        </main>
+        
+    
+        <!--FOOTER-->
+        <%- include('../partials/footer.ejs') %> 
+        
+    </body>
+</html>

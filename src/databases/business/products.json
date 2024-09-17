@@ -1,77 +1,133 @@
 [
-    {
-        "id": 1, 
-        "name": "Sofá 2P Chester Gris Plata", 
-        "Description": "Sofa de 2 puestos, hecho en Sajo y acabo en tela con medidas de alto: 78cm, y  ancho: 160cm y una profundidad: 85cm, de color gris",
-        "acabado": "tela",
-        "urlImg": "ruta de imagen, escribela por favor",
-        "category": "Sofás",
-        "buyes": 10, 
-        "selled": 4,
-        "stock": 6,
-        "iva" : true,
-        "price": 4199990,
-        "discount": 38,
-        "visited": true
+  {
+    "id": 1,
+    "name": "Sofá 2P Chester Gris Plata",
+    "Description": "Sofa de 2 puestos, hecho en Sajo y acabo en tela con medidas de alto: 78cm, y  ancho: 160cm y una profundidad: 85cm, de color gris",
+    "sku": 316428532164,
+    "terminated": "tela",
+    "images": [
+      {
+        "id": 0,
+        "isPrincipal": 1,
+        "path": "/img/store/products/sofas/Sofa_2P_Chester_Gris_plata.jpg",
+        "description": "Descripccion de la imagen"
+      },
+      {
+        "id": 1,
+        "isPrincipal": 0,
+        "path": "/img/store/products/sofas/Sofa_2P_Chester_Gris_Plata_2.jpg",
+        "description": "Descripccion de la imagen"
+      }
+    ],
+    "category": "Sofás",
+    "buyes": 10,
+    "selled": 4,
+    "stock": 6,
+    "taxes": {
+      "iva": 16
     },
-    {
-        "id": 2, 
-        "name": "Sofá 2P Pascal Azul", 
-        "Description": "Sofa de 2 puestos, hecho en Sajo y acabo en tela con medidas de alto: 78cm, y  ancho: 160cm y una profundidad: 85cm, de color azul",
-        "acabado": "tela",
-        "urlImg": "ruta de imagen, escribela por favor",
-        "category": "Sofás",
-        "buyes": 6, 
-        "selled": 5,
-        "stock": 1,
-        "iva" : true,
-        "price": 2599990,
-        "discount": 10,
-        "visited": false
+    "priceGross": 4199990,
+    "priceFinal": 5215000,
+    "discount": 38
+  },
+  {
+    "id": 2,
+    "name": "Sofá 2P Pascal Azul",
+    "Description": "Sofa de 2 puestos, hecho en Sajo y acabo en tela con medidas de alto: 78cm, y  ancho: 160cm y una profundidad: 85cm, de color azul",
+    "sku": 316428532164,
+    "terminated": "tela",
+    "images": [
+      {
+        "id": 0,
+        "isPrincipal": 1,
+        "path": "/img/store/products/sofas/Sofa_3P_Malmo_Azul_Claro_Nogal.jpg",
+        "description": "Descripccion de la imagen"
+      }
+    ],
+    "category": "Sofás",
+    "buyes": 6,
+    "selled": 5,
+    "stock": 1,
+    "taxes": {
+      "iva": 16
     },
-    {
-        "id": 3, 
-        "name": "Sofá 3P Sorrento Vinotinto", 
-        "Description": "Sofa de 3 puestos, hecho en pino y acabo en tela con medidas de alto: 84cm, y  ancho: 200cm y una profundidad: 84cm, de color vinotinto",
-        "acabado": "tela",
-        "urlImg": "ruta de imagen, escribela por favor",
-        "category": "Sofás",
-        "buyes": 8, 
-        "selled": 5,
-        "stock": 3,
-        "iva" : true,
-        "price": 1701993,
-        "discount": 26,
-        "visited": false
+    "priceGross": 4199990,
+    "priceFinal": 5215000,
+    "discount": 40
+  },
+  {
+    "id": 3,
+    "name": "Sofá 3P Sorrento Vinotinto",
+    "Description": "Sofa de 3 puestos, hecho en pino y acabo en tela con medidas de alto: 84cm, y  ancho: 200cm y una profundidad: 84cm, de color vinotinto",
+    "sku": 316428532164,
+    "terminated": "tela",
+    "images": [
+      {
+        "id": 0,
+        "isPrincipal": 1,
+        "path": "/img/store/products/sofas/Sofa_3P_Sorrento_Vinotinto.jpg",
+        "description": "Descripccion de la imagen"
+      }
+    ],
+    "category": "Sofás",
+    "buyes": 8,
+    "selled": 5,
+    "stock": 3,
+    "taxes": {
+      "iva": 16
     },
-    {
-        "id": 4, 
-        "name": "Sofá 3P Malmo Azul Claro Nogal", 
-        "Description": "Sofa de 3 puestos, hecho en sajo y acabo en tela con medidas de alto: 78cm, y  ancho: 190cm y una profundidad: 85cm, de color azul",
-        "acabado": "tela",
-        "urlImg": "ruta de imagen, escribela por favor",
-        "category": "Sofás",
-        "buyes": 15, 
-        "selled": 5,
-        "stock": 10,
-        "iva" : true,
-        "price": 2419990,
-        "discount": 0,
-        "visited": true
+    "priceGross": 4199990,
+    "priceFinal": 5215000,
+    "discount": 20
+  },
+  {
+    "id": 4,
+    "name": "Sofá 3P Malmo Azul Claro Nogal",
+    "Description": "Sofa de 3 puestos, hecho en sajo y acabo en tela con medidas de alto: 78cm, y  ancho: 190cm y una profundidad: 85cm, de color azul",
+    "sku": 316428532164,
+    "terminated": "tela",
+    "images": [
+      {
+        "id": 0,
+        "isPrincipal": 1,
+        "path": "/img/store/products/sofas/Sofa_3P_Malmo_Azul_Claro_Nogal.jpg",
+        "description": "Descripccion de la imagen"
+      }
+    ],
+    "category": "Sofás",
+    "buyes": 15,
+    "selled": 5,
+    "stock": 10,
+    "taxes": {
+      "iva": 16
     },
-    {
-        "id": 5, 
-        "name": "Sofá Cama Click Clack Sally Gris", 
-        "Description": "Sofa de 3 puestos, hecho en eucalipto y acabo en tela con medidas de alto: 80/40 cm, y  ancho: 182/182 cm y una profundidad: 87/104 cm, de color gris",
-        "acabado": "tela",
-        "urlImg": "ruta de imagen, escribela por favor",
-        "category": "Sofá/Cama",
-        "buyes": 5, 
-        "selled": 2,
-        "stock": 3,
-        "iva" : true,
-        "price": 1399990,
-        "discount": 0,
-        "visited": true
-    }
+    "priceGross": 4199990,
+    "priceFinal": 5215000,
+    "discount": 0
+  },
+  {
+    "id": 5,
+    "name": "Sofá Cama Click Clack Sally Gris",
+    "Description": "Sofa de 3 puestos, hecho en eucalipto y acabo en tela con medidas de alto: 80/40 cm, y  ancho: 182/182 cm y una profundidad: 87/104 cm, de color gris",
+    "sku": 316428532164,
+    "terminated": "tela",
+    "images": [
+      {
+        "id": 0,
+        "isPrincipal": 1,
+        "path": "/img/store/products/sofas/Sofa_Cama_Click_Clack_Sally_Gris.jpg",
+        "description": "Descripccion de la imagen"
+      }
+    ],
+    "category": "Sofá/Cama",
+    "buyes": 5,
+    "selled": 2,
+    "stock": 3,
+    "taxes": {
+      "iva": 16
+    },
+    "priceGross": 4199990,
+    "priceFinal": 5215000,
+    "discount": 10
+  }
 ]

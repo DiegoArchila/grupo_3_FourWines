@@ -1,0 +1,551 @@
+/*------------------------------- ERRORS*/
+.errors__container {
+  width: 100%;
+  background-color: var(--color-bg-cards);
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 1em;
+}
+
+.errors__text {
+  color: var(--color-font-fail);
+  display: block;
+  text-align: Center;
+  margin: 5px;
+  font-size: 15px;
+  font-weight: bolder;
+}
+
+/*------------------------------- common*/
+.text-danger {
+  color: red;
+}
+
+/*------------------------------- VIEW CART*/
+/*Cart Detail Title*/
+.cartDetail__title,
+.cashRegister__title {
+  margin: 12px 0;
+  color: var(--color-font-title);
+  text-align: center;
+}
+
+.cartDetail__container {
+  height: 420px;
+  overflow-y: auto;
+  border-radius: 5px;
+}
+
+.cartDetail__item,
+.cashRegister__container {
+  height: 96px;
+  padding: 1% 5%;
+  border-radius: 5px;
+  margin: 5px 0;
+  overflow: hidden;
+  background-color: var(--color-bg-cards);
+}
+
+/*Buttons*/
+.cartDetail__button,
+.product__buttonEdit {
+  width: 29px;
+  height: 29px;
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--color-font-icons);
+  border-radius: 3px;
+  border-style: none;
+  text-align: center;
+}
+
+.cartDetail__buttonUnitsAdd,
+.product__buttonEdit {
+  background-color: var(--color-bg-btnOk);
+}
+
+.cartDetail__buttonUnitsDecrease {
+  background-color: var(--color-bg-btnFail);
+}
+
+/*Input*/
+input.cartDetail__itemInput {
+  width: 26px;
+  height: 26px;
+  font-size: 18px;
+  border-style: none;
+  text-align: center;
+  margin: 0px;
+}
+
+/*Pruduct*/
+.cartDetail__product {
+  overflow-y: auto;
+  align-self: baseline;
+  height: 85px;
+}
+
+.cartDetail__productImg {
+  width: 94px;
+  height: 48px;
+  border-radius: 3px;
+}
+
+.cartDetail__productName {
+  width: 94px;
+  font-weight: bold;
+  text-align: center;
+  font-size: 1.2em;
+}
+
+/*Prices and discounts*/
+.cartDetail__containerPrices {
+  width: 110px;
+  height: 85px;
+  justify-content: space-between;
+}
+
+.cartDetail__containerDiscounts {
+  text-align: center;
+}
+
+.cartDetail__priceGrossText,
+.cartDetail__DiscountText,
+.cartDetail__totalPriceText,
+.cartDetail__totalPrice,
+.product__discount,
+.product__totalPrice {
+  font-size: 15px;
+  font-weight: bolder;
+}
+
+.cartDetail__priceGrossText {
+  color: var(--color-font-priceGross);
+  text-decoration: line-through;
+}
+
+.cartDetail__DiscountText,
+.product__discount {
+  color: var(--color-bg-btnOk);
+}
+
+/*Delete product button*/
+.cartDetail__deleteProduct,
+.product__buttonDelete {
+  justify-content: center;
+}
+
+.cartDetail__deleteProductIcon,
+.product__buttonDelete {
+  background-color: var(--color-bg-btnFail);
+  justify-content: center;
+  font-size: 23px;
+}
+
+/*Cash Register*/
+.cashRegister__container {
+  width: 100%;
+}
+
+.cashRegister__totalText {
+  font-size: 20px;
+}
+
+.cashRegister__totalPrice {
+  font-size: 26px;
+  font-weight: bold;
+}
+
+/*Cash Register Buttons*/
+.cashRegister__buttonDeleteOrder,
+.cashRegister__buttonPayOrder {
+  width: 115px;
+  height: 29px;
+  font-weight: bold;
+  color: var(--color-font-btn);
+  border-radius: 3px;
+  border-style: none;
+  position: relative;
+}
+
+.cashRegister__buttonDeleteOrder {
+  background-color: var(--color-bg-btnFail);
+  text-align: right;
+  font-size: 10px;
+  padding-right: 10px;
+}
+
+.cashRegister__buttonPayOrder {
+  background-color: var(--color-bg-btnOk);
+  text-align: center;
+  font-size: 13px;
+}
+
+.cashRegister__iconDeleteOrder,
+.cashRegister__iconPayOrder {
+  position: absolute;
+}
+
+.cashRegister__iconDeleteOrder {
+  left: 5px;
+  bottom: 3px;
+}
+
+.cashRegister__iconPayOrder {
+  right: 5px;
+  bottom: 4px;
+  font-size: 23px;
+}
+
+/*-------------------------------Component Adminbar*/
+.adminBar {
+  justify-content: center;
+  margin: 10px 0;
+  width: 100%;
+  height: 60px;
+  background-color: var(--color-bg-adminBar);
+  border-radius: 5px;
+  gap: 20px;
+}
+
+/*icons of the AdminBar*/
+.adminBar__principalIcon {
+  color: var(--color-font-adminBar);
+  font-size: 43px;
+  width: 43px;
+  height: 43px;
+}
+.adminBar__principalIconUser {
+  /*background-color: var(--color-font-adminBar);*/
+  color: var(--color-font-adminBar);
+  border-radius: 50px;
+}
+
+/*------------------------------- VIEW ADMIN PRINCIPAL*/
+.alerts {
+  width: 100%;
+}
+
+.alerts__bar {
+  color: var(--color-font-title);
+  font-size: 17px;
+}
+
+.alerts__item,
+.product__item {
+  width: 100%;
+  height: 55px;
+  background-color: var(--color-bg-cards);
+  border-radius: 5px;
+  margin: 5px 0;
+  justify-content: space-evenly;
+}
+
+.alerts__itemName,
+.product__itemName {
+  color: var(--color-font-itemCards);
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.alerts__buttonSetup {
+  background-color: var(--color-bg-btnOk);
+  color: var(--color-font-btn);
+  font-size: 12px;
+  border-radius: 3px;
+  font-weight: bold;
+  padding: 6px;
+}
+
+/*------------------------------- VIEW ADMIN PRODUCTS*/
+.product {
+  width: 100%;
+}
+
+.product__title,
+.product__titleNewProduct {
+  color: var(--color-font-title);
+  font-size: 17px;
+}
+
+.product__itemName {
+  width: 40%;
+  overflow-y: auto;
+  text-align: center;
+}
+
+.product__buttonCreate {
+  background-color: var(--color-bg-btnCreate);
+  color: var(--color-font-btn);
+  font-size: 12px;
+  border-radius: 3px;
+  font-weight: bold;
+  padding: 5px;
+  position: relative;
+  width: 81px;
+  height: 22px;
+  text-align: left;
+}
+
+.product__buttonIcon {
+  top: 2px;
+  right: 3px;
+  font-size: 20px;
+  position: absolute;
+}
+
+.product__buttonEdit {
+  font-size: 27px;
+}
+
+/*----------------------------------- VIEW ADMIN PRODUCT*/
+.product__titleNewProduct {
+  justify-content: center;
+}
+
+.product__form {
+  border-radius: 5px;
+  background-color: var(--color-bg-cards);
+  padding: 10px;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+
+.product__imagesContainer {
+  padding: 5px;
+  display: block;
+}
+
+.product__imagesSlider {
+  height: 148px;
+  padding: 3px 5px;
+  overflow-x: scroll;
+  gap: 12px;
+  border-radius: 5px;
+  margin-bottom: 8px;
+}
+
+.product__imagen {
+  width: 148px;
+  height: 120px;
+  border-radius: 5px;
+}
+
+.product__imagen:hover {
+  box-shadow: 0px 0px 5px 0px var(--color-bg-miniBanner);
+}
+
+.product__imagesDescription {
+  display: block;
+  resize: none;
+}
+
+.product__inputUnits,
+.product__inputDiscount,
+.product__inputPriceGross,
+.product__inputPriceFinal {
+  text-align: center;
+}
+
+input.product__inputUnits,
+.product__inputTaxes {
+  width: 100%;
+  text-align: center;
+}
+
+.product__inputLabelDescription {
+  font-style: italic;
+  font-size: 13px;
+  color: var(--color-font-adminBar);
+}
+
+/*Buttons*/
+.product__imagesButtonAdd {
+  width: 100%;
+  overflow-x: auto;
+  text-align: right;
+}
+
+.product__buttons {
+  color: var(--color-font-btn);
+  font-weight: bold;
+  padding: 5px 10px;
+  height: 30px;
+  font-size: 15px;
+  gap: 3px;
+}
+
+.product__buttons svg {
+  font-size: 23px;
+}
+
+.product__buttonClear {
+  background-color: var(--color-bg-btnFail);
+  text-align: right;
+  padding-right: 10px;
+}
+
+.product__buttonSend {
+  background-color: var(--color-bg-btnOk);
+  text-align: center;
+}
+
+/*Radios*/
+.product__imagesIsMainContiner {
+  align-items: center;
+  justify-content: space-evenly;
+  margin-bottom: 13px;
+}
+
+.product__imagen-IsMain {
+  margin: 0px 5px;
+}
+
+/*Select*/
+select.product__inputCategory {
+  width: 100%;
+  text-align: center;
+}
+
+/*-------------------------------------- VIEW ADMIN USER*/
+
+/* .user{
+
+} */
+
+.user__bar {
+  width: 100%;
+}
+
+.user__barTitle {
+  color: var(--color-font-title);
+  font-size: 17px;
+}
+
+.user__container {
+  border-radius: 5px;
+  background-color: var(--color-bg-cards);
+  padding: 10px;
+  overflow: hidden;
+  margin: 15px 0px;
+}
+
+.user__containerMiddle {
+  width: 49.5%;
+}
+
+/*Select*/
+select.user__inputGender {
+  width: 100%;
+  text-align: center;
+}
+
+/*Buttons*/
+.user__buttons {
+  color: var(--color-font-btn);
+  font-weight: bold;
+  padding: 5px 10px;
+  height: 30px;
+  font-size: 15px;
+  gap: 3px;
+}
+
+/*-------------------------------------------- VIEW LOGIN*/
+.login__main {
+  width: 100%;
+  margin: 0px;
+  min-height: 100vh;
+  background-repeat: repeat;
+  background-position: inherit;
+}
+
+.login {
+  border-radius: 5px;
+  background-color: var(--color-bg-cards);
+  padding: 10px;
+  width: 100%;
+  box-shadow: 0px 0px 5px 0px var(--color-bg-miniBanner);
+}
+
+/*inputs*/
+input[type="password"],
+input[name="email"] {
+  text-align: center;
+}
+
+input[class="login__input"],
+input[class="login__input"] {
+  margin-bottom: 5px;
+}
+
+/* links */
+.login__forgetPwd {
+  font-weight: bolder;
+  color: var(--color-font-title);
+  text-align: center;
+  font-size: 14px;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.login__createAccountText {
+  text-align: center;
+  color: var(--color-font-adminBar);
+  font-size: 15px;
+  margin-top: 6px;
+}
+
+.login__createAccountLink {
+  text-transform: uppercase;
+  font-weight: bold;
+  color: var(--color-font-fail);
+}
+
+.login__buttonPosition {
+  margin-top: 10px;
+  justify-content: center;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 0px 10px;
+  text-align: center;
+  width: 100%;
+}
+
+.col-2 {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.col-2 > div {
+  width: 50%;
+}
+
+.button_verMas {
+  background-color: var(--color-bg-primary);
+  color: white;
+  text-align: center;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 15px;
+}
+
+.button_verMas:hover {
+  cursor: pointer;
+}
+
+.button_verMas:active {
+  background-color: var(--color-orange);
+}
+
+/*Media query desktop*/
+@media (min-width: 769px) {
+  .content {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}

@@ -1,0 +1,32 @@
+:root {
+  --color-bg-primary: #232f3e;
+  --color-font-icons: #ffffff;
+  --color-font-menuBar: #ffffff;
+  --color-bg: #e7e7e7;
+  --color-orange: #ff5200;
+
+  --color-bg-body: #e7e7e7;
+  --color-bg-cards: #ffffff;
+  --color-bg-primary: #232f3e;
+  --color-bg-miniBanner: #04536c;
+  --color-bg-adminBar: #ffffff;
+  --color-bg-btnOk: #9db31a;
+  --color-bg-btnFail: #e74c3c;
+  --color-bg-btnCreate: #ff5200;
+
+  --color-font-itemCards: #000000;
+  --color-font-btn: #ffffff;
+  --color-font-fail: #e74c3c;
+  --color-font-icons: #ffffff;
+  --color-font-title: #ff5200;
+  --color-font-text-footer: #ffffff;
+  --color-font-menuBar: #ffffff;
+  --color-font-adminBar: #04536c;
+  --color-font-priceGross: #8e8e8e;
+
+  --text-title-sm: 1.2em;
+  --text-title-md: 1.6em;
+  --text-title-lg: 1.9em;
+
+  --font-RedHatDispaly: "Red Hat Display", sans-serif;
+}

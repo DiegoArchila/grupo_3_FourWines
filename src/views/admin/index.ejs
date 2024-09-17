@@ -1,0 +1,60 @@
+<!--
+    Objects needs for works
+    orders {
+        "id":0,
+        "date":"dd/mm/YYYY",
+        "userId":0,
+        "totalPriceOrder": 0,
+        "status": "no-setup"
+    }
+-->
+<!DOCTYPE html>
+<html lang="<%- settingGeneral.languaje.Spanish %>">
+    <!--HEAD-->
+    <%- include("../partials/head.ejs") %>
+    <body>
+
+        <!--HEADER-->
+        <%- include('../partials/header.ejs')%>
+
+        
+        <!--Se pasa el objeto a miniBanner-->
+        <!--MiniBanner-->
+        <% minibar = {
+            title:"Admin principal",
+            icon:"eos-icons:admin-outlined"
+        } %> 
+        <%- include('../partials/miniBanner.ejs')%>
+
+        <!--MAIN-->
+        <main>
+            <!--AdminBar-->
+            <%- include('../components/adminBar.ejs')%>
+            <section class="alerts">
+                <h1 class="alerts__bar">Pedidos pendientes</h1>
+                
+                <!-- Item, represent a Order of the Orders Pending -->
+                <% if (Object.keys(orders).length!=0) {%>
+                    <% orders.forEach(order => {%>
+                        <article class="flx-ctr alerts__item">
+                            <span class="alerts__itemName"><%= order.date %></span>
+                            <a href="#" class="alerts__itemName">PEDIDO <%= order.id %></a>
+                            <span class="alerts__itemName"><%= toCOP.format(order.totalPriceOrder) %></span>
+                            <button class="alerts__buttonSetup">Preparar
+                                <i class="iconify" data-icon="fa-solid:box-open"></i>
+                            </button>
+                        </article>
+                    <%}) %>
+                            
+                <% } else {%>
+                    <!--ACA VA CUANDO ES CARRITO O CANASTILLA ESTA VACIA-->
+                <% } %>        
+            </section>
+        </main>
+        
+    
+        <!--FOOTER-->
+        <%- include('../partials/footer.ejs') %> 
+        
+    </body>
+</html>

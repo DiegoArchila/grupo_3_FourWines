@@ -1,0 +1,37 @@
+/*IMPORTS*/
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@300;400;600&display=swap");
+
+/*VARIABLES*/
+@import url("./partials/variables.css");
+
+/*NORMALIZACION*/
+@import url("./partials/normalizer.css");
+
+/*Styles Commons*/
+@import url("./partials/commons.css");
+
+/*HEADER*/
+@import url("./partials/header.css");
+
+/*MINIBANNER*/
+@import url("./partials/miniBanner.css");
+
+/*MAIN*/
+@import url("./partials/main.css");
+
+/*SLIDER*/
+@import url("./partials/slider.css");
+
+/*CARD*/
+@import url("./partials/card.css");
+
+/*FOOTER*/
+@import url("./partials/footer.css");
+
+/*MENU-DESPLEGABLE*/
+@import url("./partials/menu-desplegable.css");
+
+/*---------------------------------------------------------------MEDIA QUERYS*/
+
+/*361-MAIN*/
+@import url("./partials/361/main.css");

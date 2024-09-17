@@ -1,16 +1,39 @@
-<div class="content"> 
-    <div class="logo">LOGO</div>
-    <section class="tands">
-        <div class="tools">
-            <div class="user"> <i class="fas fa-user-circle"></i> </div>
-            <div class="cart"> <i class="fas fa-shopping-cart"></i> </div>
-            <div class="exit"> <i class="fas fa-sign-in-alt"></i> </div>
-            <div class="burger"> <i class="fas fa-bars"></i> </div>
-        </div>
-        <div class="sbar">
-            <form> <input type="text" placeholder=" Buscar" name="search"> 
-                <button class="sbutt" type="submit"> <i class="fa fa-search"></i></button>
-            </form>
-        </div>
-    </section>
-</div>
+<header>
+    <nav class="menuBar">
+        <ul class="menuBar__optionSite flx-ctr">
+            <li class="menuBar__menu">
+                <a href="#" class="menuBar__menuLink">
+                    <i class="iconify menuBar__menuIcon" data-icon="<%= index.icon %>"></i>
+                </a>
+            </li>
+            <li class="menuBar__nameSite">
+                <a href="/" class="menuBar__nameSiteText">
+                    TUMUEBLE
+                </a>
+            </li>
+        </ul>
+        <ul class="menuBar__optionUser flx-ctr">
+
+            <!-- Section Searching -->
+            <li>
+                <a href="#" class="">
+                    <i class="iconify menuBar__optionUserIcon" data-icon="bx:bx-search"></i>
+                </a>
+            </li>
+
+            <!-- Section Cart -->
+            <li>
+                <a href="/cart" class="">
+                    <i class="iconify menuBar__optionUserIcon" data-icon="akar-icons:cart"></i>
+                </a>
+            </li>
+
+            <!-- Section Login -->
+            <li>
+                <a href="/login" class="">
+                    <i class="iconify menuBar__optionUserIcon" data-icon="ri:login-circle-line"></i>
+                </a>
+            </li>
+        </ul>                
+    </nav>
+</header>

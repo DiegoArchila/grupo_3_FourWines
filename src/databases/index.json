@@ -1,4 +1,5 @@
 {
     "name":"tumueble",
-    "title":"home"
+    "title":"home",
+    "icon":"ant-design:shop-outlined"
 }

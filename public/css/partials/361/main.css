@@ -1,0 +1,9 @@
+/*Media query tablets*/
+@media (min-width: 361px) {
+  .content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}

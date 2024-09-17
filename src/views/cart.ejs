@@ -1,50 +1,143 @@
+<!-- cart.json contain information from the Cart shop.
+cart {
+    id: Identifiquer of the product.
+    name: name of the product.
+    urlImg: rout from the imagen of the product
+    units: number of units of the product
+    taxes: taxes applied to the product
+    priceFinal: price final of the product
+    discount: discount applied to the product 
+}
+        index,
+        settingGeneral,
+        cart,
+        toCOP: formatterToCOP,
+        minibar={
+            title:"Carrito de compras",
+            icon:"mdi:cash-register" //Iconify icons
+        } 
+-->
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="/css/hyf.css">
-    <link rel="stylesheet" href="/css/cart.css">
-    <title>Cart</title>
-</head>
+<html lang="<%- settingGeneral.languaje.Spanish %>">
+    <!--HEAD-->
+    <%- include("./partials/head.ejs") %>
 <body>
 
-    <header>
-        <%- include('./partials/header')%>        
-    </header>
+    <!--HEADER-->
+    <%- include('./partials/header.ejs')%>
 
+    <!--MiniBanner-->
+    <%- include('./partials/miniBanner.ejs')%>
+    
+    <!--MAIN-->
     <main>
-        <h2>CARRITO DE COMPRAS</h2>
-        <section>
-            <article>
-                <div class="imginfo">
-                    <img src="/img/noimg.jpg" class="prodimg">
-                    <div class="info">
-                        <div class="name"> Nombre de mueble </div>
-                        <div class="price"> $######### </div>
-                    </div>
-                </div>
-                <form class="fo">
-                    <div class="cantidad">
-                        <label for="cantidad"> Cantidad </label>
-                        <input class='numinp' type="number" name="cantidad">
-                    </div>
-                    <button type="button" class="buttDel">Eliminar</button>
-                </form>
-            </article>
+                
+        <!-- CONTAINER CANASTILLA -->
+        <section class="cartDetail__container">
+
+            <h2 class="cartDetail__title">DETALLE CANASTILLA</h2>
+
+            <!-- Item, represent a Product of the CANASTILLA Cart -->
+            <% if (Object.keys(cart).length!=0) {%>
+              <% cart.forEach(product => {%>
+                
+                <article class="cartDetail__item flx-ctr">
+                    <!-- Section product, buttons add or decrease units -->
+                    <ul class="cartDetail__itemUnits flx-clm-ctr">
+                        <li class="cartDetail__itemUnitsAdd">
+                            <button class="cartDetail__button cartDetail__buttonUnitsAdd">+</button>
+                        </li>
+                        <li class="cartDetail__itemInputUnits">
+                            <input type="number" class="cartDetail__itemInput" value="<%= product.units %>" min="1" max="999" id="itemInputText" required>
+                        </li>
+                        <li class="cartDetail__itemUnitsDecrease">
+                            <button class="cartDetail__button cartDetail__buttonUnitsDecrease">-</button>
+                        </li>
+                    </ul>
+                    
+                    <!-- Section product, imagen and name -->
+                    <ul class="cartDetail__product flx-clm-ctr">
+                        <li class="cartDetail__productImg">
+                            <img src="<%= product.urlImg %>" alt="Imagen del producto" class="cartDetail__productImg">
+                        </li>
+                        <li class="cartDetail__productName">
+                            <span class="cartDetail__productNameText">
+                                <%= product.name %> 
+                            </span>
+                        </li>
+                    </ul>
+
+                    <!-- Section product prices an discounts -->
+                    <ul class="cartDetail__containerPrices flx-clm-ctr">
+                        <li class="cartDetail__containerDiscounts">
+                            <ul class="cartDetail__priceGross">
+                                <li class="cartDetail__priceGrossText">
+                                    <%= toCOP.format(product.priceGross) %> 
+                                </li>
+                                <li class="cartDetail__DiscountText">
+                                    -<%= product.discount %>  % OFF
+                                </li>
+                            </ul>
+                        <li class="cartDetail__containerTotalPrice">
+                            <li class="cartDetail__totalPriceText">
+                                Total:
+                            </li>
+                            <li class="cartDetail__totalPrice">
+                                <%= toCOP.format(product.priceFinal) %>
+                                <% (totalOrder+=product.priceFinal) %>  
+                            </li>
+                        </li>
+                    </ul>
+
+                    <!-- Section delete product -->
+                    <ul class="cartDetail__deleteProduct flx-clm-ctr">
+                        <li class="flx-clm-ctr">
+                            <button class="cartDetail__deleteProductIcon cartDetail__button flx-clm-ctr"">
+                                <i class="iconify" data-icon="ph:trash-simple"></i>
+                            </button>
+                        </li>
+                    </ul>
+                </article>
+              <%}) %>
+                            
+            <% } else {%>
+                <!--ACA VA CUANDO ES CARRITO O CANASTILLA ESTA VACIA-->
+            <% } %>   
         </section>
 
-        <div class='completar'>
-            <button> FINALIZAR COMPRA </button>
-        </div>
-     
+        
+        <section class="cashRegister">
+            <h2 class="cashRegister__title">CAJA REGISTRADORA</h2>
+            <article class="cashRegister__container">
+                <ul class="cashRegister__totalToPaid flx-clm-ctr">
+                    <li class="cashRegister__totalText">
+                        Total Pedido:
+                    </li>
+                    <li class="cashRegister__totalPrice">
+                        <%= toCOP.format(totalOrder) %>
+                    </li>
+                </ul>
+                <ul class="cashRegister__buttons flx-ctr">
+                    <li class="cashRegister__buttonDeleteOrder">
+                        <button class="cashRegister__buttonDeleteOrder cartDetail__deleteProductIcon">
+                            <span class="iconify cartDetail__deleteProductIcon cashRegister__iconDeleteOrder" data-icon="ph:trash-simple"></span>
+                            Eliminar pedido
+                        </button>
+                    </li>
+                    <li class="cashRegister__buttonPayOrder">
+                        <button class="cashRegister__buttonPayOrder">
+                            Pagar
+                            <span class="iconify cashRegister__iconPayOrder" data-icon="vaadin:cash"></span>
+                        </button>
+                    </li>
+                </ul>
+            </article>
+        </section>
+        
     </main>
-
-    <footer>
-        <%- include('./partials/footer')%>
-    </footer>
-
+    
+    <!--FOOTER-->
+    <%- include('./partials/footer.ejs') %> 
+    
 </body>
 </html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="<%- settingGeneral.languaje.Spanish %>">
+  <!--HEAD-->
+  <%- include("./partials/head.ejs") %>
+  <body>
+    <!--HEADER-->
+    <%- include('./partials/header.ejs')%>
+
+    <!--Card product-->
+    <div class="content">
+      <div class="card">
+        <div class="slider-container">
+          <% if (product.images) { %>
+          <ul class="slider">
+            <% for( let i = 0; i < product.images.length; i++ ) { %>
+            <li id="image<%= i + 1 %>">
+              <div class="card-image">
+                <img
+                  src="/img/products/<%= product.images[i].pathImagen %>"
+                  height="300px"
+                  width="300px"
+                  alt="<%= product.productName %> "
+                />
+              </div>
+            </li>
+            <% } %>
+          </ul>
+          <ul class="slider-menu">
+            <% for( let i = 0; i < product.images.length; i++ ) { %>
+            <li><a href="#image<%= i + 1 %>"><%= i+1 %> </a></li>
+            <% } %>
+          </ul>
+          <% } %>
+        </div>
+        <div class="card-body">
+          <div class="grid">
+            <div class="row">
+              <p class="title"><%= product.productName %></p>
+            </div>
+            <div class="detail">
+              <% if (product.productDescription) { %>
+              <h1 class="detail-titulo">Descripción:</h1>
+              <p class="detail-content"><%= product.productDescription %></p>
+              <% } %> <% if (product.productterminated) { %>
+              <h1 class="detail-titulo">Acabado:</h1>
+              <p class="detail-content"><%= product.productTerminated %></p>
+              <% } %> <% if (product.sku) { %>
+              <h1 class="detail-titulo">SKU:</h1>
+              <p class="detail-content"><%= product.sku %></p>
+              <% } %> <% if (product.category) { %>
+              <h1 class="detail-titulo">Categoria:</h1>
+              <p class="detail-content"><%= product.category %></p>
+              <% } %> <% if (product.unitsBuyes) { %>
+              <h1 class="detail-titulo">Disponibles:</h1>
+              <p class="detail-content"><%= product.unitsBuyes %></p>
+              <% } %>
+            </div>
+            <div class="row">
+              <div class="column">
+                <div class="buttons">
+                  <button class="agregar-carrito">
+                    Agregar al
+                    <span class="iconify" data-icon="bytesize:cart"></span>
+                  </button>
+                </div>
+              </div>
+              <div class="column">
+                <div class="cost">
+                  <p class="price"><%= toCOP.format(product.priceFinal) %></p>
+                  <% if (product.discount>0) { %>
+                  <p class="offer"><%= product.discount %> % OFF</p>
+                  <p class="price-normal">
+                    <%= toCOP.format(product.priceGross) %>
+                  </p>
+                  <% } %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Card product-->
+
+    <!--FOOTER-->
+    <%- include('./partials/footer.ejs') %>
+  </body>
+</html>

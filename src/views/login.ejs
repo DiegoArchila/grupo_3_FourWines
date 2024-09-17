@@ -1,0 +1,70 @@
+<!--
+    Objects needs for works
+
+-->
+<!DOCTYPE html>
+<html lang="<%- settingGeneral.languaje.Spanish %>">
+    <!--HEAD-->
+    <%- include("./partials/head.ejs") %>
+    <body>
+
+        <!--HEADER-->
+        <%- include('./partials/header.ejs')%>
+
+        <!--MiniBanner-->
+        <!--Config-->
+            <% minibar = {
+                title:"Ingresar",
+                icon:"ant-design:user-outlined"
+            } %> 
+        <%- include('./partials/miniBanner.ejs')%>
+
+        <!--MAIN-->
+        <main class="login__main flx-ctr">
+            <article class="login__container">
+                <form class="login" method="POST" action="/login/validate">
+                    <!--email-->
+                    <label class="login__inputText" for="email">
+                        Email
+                    </label>
+                    <input class="login__input" type="email" name="email" id="email" required minlength="2" maxlength="128 "
+                    placeholder="Ingrese el email">
+
+                    <!--Password-->
+                    <label class="login__inputText" for="password">
+                        Contraseña
+                    </label>
+                    <input class="login__input" type="password" name="password" id="password" required minlength="2" maxlength="64"
+                    placeholder="Ingrese la contraseña...">
+
+                    <!--Submit-->
+                    <div class="flx-ctr login__buttonPosition">
+                        <button type="submit" class="product__buttons product__buttonSend flx-ctr">
+                            Ingresar
+                            <i class="iconify" data-icon="ant-design:user-outlined"></i>
+                        </button>
+                    </div>   
+
+                    <!--Password Forget-->
+                    <a href="#" class="login__forgetPwd">
+                        He olvidado mi contraseña
+                    </a>
+
+                    <!--Create Account-->
+                    <p href="#" class="login__createAccountText">
+                        Si no tenes una cuenta, puedes 
+                        <a class="login__createAccountLink" href="/user/create">
+                            crear una
+                        </a>
+                    </p>
+
+                </form>
+            </article>
+        </main>
+        
+    
+        <!--FOOTER-->
+        <%- include('./partials/footer.ejs') %> 
+        
+    </body>
+</html>

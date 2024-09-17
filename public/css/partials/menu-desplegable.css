@@ -1,0 +1,96 @@
+.menu-desplegable {
+  margin: 0;
+  padding: 0;
+}
+
+.menu-desplegable .menu-title {
+  color: var(--color-orange);
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.menu-desplegable .menu {
+  margin-bottom: 50px;
+}
+
+.menu-desplegable .menu li {
+  background-color: var(--color-bg-primary);
+}
+
+.menu-desplegable .menu li a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 15px;
+  padding: 10px;
+  font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.menu-desplegable .menu li button {
+  display: block;
+  color: #fff;
+  background-color: var(--color-bg-primary);
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 15px;
+  padding: 10px;
+  font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: none;
+}
+
+.menu-desplegable .menu li button:active {
+  background-color: var(--color-orange);
+}
+
+.menu-desplegable .menu li {
+  float: left;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-desplegable .menu li:hover {
+  background: var(--color-orange);
+}
+
+.menu-desplegable .menu .lista-menu {
+  display: none;
+  opacity: 0;
+  top: 100%;
+  left: 0;
+  padding: 0;
+  transition: opacity 5s;
+}
+
+.menu-desplegable .menu .lista-menu:target {
+  display: block;
+  opacity: 1;
+}
+
+.menu-desplegable .menu .lista-menu li {
+  float: none;
+  width: 150px;
+}
+
+.menu-desplegable .menu .lista-menu a {
+  line-height: 120%;
+  padding: 10px 15px;
+}
+
+.menu-desplegable .menu li:hover > ul {
+  display: block;
+}
+
+.menu-desplegable .contenido .product {
+  opacity: 0;
+  display: none;
+}
+
+.menu-desplegable .contenido .product:target {
+  opacity: 1;
+  display: block;
+}

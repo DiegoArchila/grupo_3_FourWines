@@ -1,0 +1,25 @@
+/*
+    Component:miniBanner
+*/
+.miniBanner__container{
+    background-color: var(--color-bg-miniBanner);
+    height: 30px;
+    text-align: center;
+}
+
+.miniBanner{
+    align-items: center;
+    justify-content: space-between;
+    align-content: center;
+}
+
+.miniBanner__titleText{
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--color-font-menuBar);
+}
+.miniBanner__icon{
+    width: 24px;
+    height: 24px;
+    color: var(--color-font-icons);
+}

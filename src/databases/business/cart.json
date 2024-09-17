@@ -1,0 +1,97 @@
+[
+    {
+        "id": 1, 
+        "name": "Sofá 3P Niu Navy", 
+        "urlImg": "/img/store/products/sofas/NIU-AZUL-1.jpg",
+        "units": 1,
+        "taxes" : {
+            "iva":19
+        },
+        "priceGross": 3073000,
+        "priceFinal": 1843800,
+        "discount": 40
+    },
+    {
+        "id": 2, 
+        "name": "Juegos Sala Milan", 
+        "urlImg": "/img/store/products/salas/SalaMilan.jpg",
+        "units": 1,
+        "taxes" : {
+            "iva":19
+        },
+        "priceGross": 4439000,
+        "priceFinal": 1954000, 
+        "discount": 44
+    },
+    {
+        "id": 3, 
+        "name": "Cama Felder", 
+        "urlImg": "/img/store/products/camas/cama_felder.jpg",
+        "units": 1,
+        "taxes" : {
+            "iva":19
+        },
+        "priceGross": 2275000,
+        "priceFinal": 1790000, 
+        "discount": 35
+    },
+    {
+        "id": 4, 
+        "name": "Comedor 6 Puestos Carson", 
+        "urlImg": "/img/store/products/comedores/carson_6puestos-scaled.jpg",
+        "units": 1,
+        "taxes": {
+            "iva":19
+        },
+        "priceGross": 8023000,
+        "priceFinal": 5215000, 
+        "discount": 35
+    },{
+        "id": 1, 
+        "name": "Sofá 3P Niu Navy", 
+        "urlImg": "/img/store/products/sofas/NIU-AZUL-1.jpg",
+        "units": 1,
+        "taxes" : {
+            "iva":19
+        },
+        "priceGross": 3073000,
+        "priceFinal": 1843800,
+        "discount": 40
+    },
+    {
+        "id": 2, 
+        "name": "Juegos Sala Milan", 
+        "urlImg": "/img/store/products/salas/SalaMilan.jpg",
+        "units": 1,
+        "taxes" : {
+            "iva":19
+        },
+        "priceGross": 4439000,
+        "priceFinal": 1954000, 
+        "discount": 44
+    },
+    {
+        "id": 3, 
+        "name": "Cama Felder", 
+        "urlImg": "/img/store/products/camas/cama_felder.jpg",
+        "units": 1,
+        "taxes" : {
+            "iva":19
+        },
+        "priceGross": 2275000,
+        "priceFinal": 1790000, 
+        "discount": 35
+    },
+    {
+        "id": 4, 
+        "name": "Comedor 6 Puestos Carson", 
+        "urlImg": "/img/store/products/comedores/carson_6puestos-scaled.jpg",
+        "units": 1,
+        "taxes": {
+            "iva":19
+        },
+        "priceGross": 8023000,
+        "priceFinal": 5215000, 
+        "discount": 35
+    }
+]

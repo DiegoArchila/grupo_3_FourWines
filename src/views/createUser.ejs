@@ -1,0 +1,151 @@
+<!--
+    Objects needs for works
+-->
+<!DOCTYPE html>
+<html lang="<%- settingGeneral.languaje.Spanish %>">
+    <% index.title="Crear usuario" %> 
+    <!--HEAD-->
+    <%- include("./partials/head.ejs") %>
+    <body>
+
+        <!--HEADER-->
+        <%- include('./partials/header.ejs')%>
+
+        <!--MiniBanner-->
+        <!--Config-->
+            <% minibar = {
+                title:"Crear usuario",
+                icon:"ant-design:user-outlined"
+            } %> 
+        <%- include('./partials/miniBanner.ejs')%>
+
+        <!--MAIN-->
+        <main>
+            
+            <% if (locals.errors) {%>
+                
+                <section class="errors__container" role="alert">
+                <% for(let error in errors) {%> 
+                    <p class="errors__text">
+                       - <%= errors[error].msg  %>
+                    </p>
+                <% } %>
+                </section>
+            <%}%>     
+                        
+            <section class="user">
+                <!-- <nav class="user__bar flx-ctr">
+                    <h1 class="user__barTitle">Crear usuario</h1>
+                </nav> -->
+                <form action="/user/create" method="POST" class="user__container">
+                    
+                    <!--names-->
+                    <label class="user__inputText" for="firstName">
+                        Nombres *
+                    </label>
+                    <input type="text" name="firstName" id="firstName" required minlength="2" 
+                    maxlength="128" placeholder="Ingrese los nombres..." value=
+                    <%= (locals.old && old.firstName) ? old.firstName : "" %>>
+            
+                    <!--last names-->
+                    <label class="user__inputText" for="lastName">
+                        Apellidos *
+                    </label>
+                    <input type="text" name="lastName" id="lastName" required minlength="2" 
+                    maxlength="128" placeholder="Ingrese los apellidos..." value=
+                    <%= (locals.old && old.lastName) ? old.lastName : "" %>>
+            
+                    <!--Display Elements by row in flex-->
+                    <div class="flx-ctr">
+                        <div class="user__containerMiddle">
+                            <!--date born-->
+                            <label class="user__inputText" for="dateBorn">
+                                Fecha nacimiento *
+                            </label>
+                            <input type="date" name="dateBorn" id="dateBorn" required value=
+                            <%= (locals.old && old.dateBorn) ? old.dateBorn : "" %> />
+                        </div>
+            
+                        <div class="user__containerMiddle">
+                            <!--Category-->
+                            <label class="user__inputText" for="gender">
+                                Genero *
+                            </label>
+                            <select name="gender" id="gender" class="user__inputGender" required >
+                                <option value="">Seleccione</option>
+                                <option value="1" <%= (locals.old && (old.gender && old.gender=="1")) ? "selected" : "" %> >Hombre</option>
+                                <option value="2" <%= (locals.old && (old.gender && old.gender=="2")) ? "selected" : "" %> >Mujer</option>
+                                <option value="3" <%= (locals.old && (old.gender && old.gender=="3")) ? "selected" : "" %> >No definido</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <!--email-->
+                    <label class="user__inputText" for="email">
+                        Email *
+                    </label>
+                    <input type="email" name="email" id="email" required minlength="2" maxlength="128 "
+                    placeholder="Ingrese el email" value=
+                    <%= (locals.old && old.email) ? old.email : "" %>>
+            
+                    <!--Country-->
+                    <label class="user__inputText" for="country">
+                        País *
+                    </label>
+                    <input type="text" name="country" id="country" required minlength="2" maxlength="128"
+                    placeholder="Ingrese el país..." value=
+                    <%= (locals.old && old.country) ? old.country : "" %> >
+            
+                    <!--province state-->
+                    <label class="user__inputText" for="province_state">
+                        Provincia/Estado *
+                    </label>
+                    <input type="text" name="province_state" id="province_state" required minlength="2" maxlength="128"
+                    placeholder="Ingrese la provincia o estado..." value=
+                    <%= (locals.old && old.province_state) ? old.province_state : "" %> >
+            
+                    <!--City town-->
+                    <label class="user__inputText" for="city_town">
+                        Ciudad/Pueblo *
+                    </label>
+                    <input type="text" name="city_town" id="city_town" required minlength="2" maxlength="128"
+                    placeholder="Ingrese la ciudad o el pueblo..." value=
+                    <%= (locals.old && old.city_town) ? old.city_town : "" %> >
+            
+                    <!--Address line-->
+                    <label class="user__inputText" for="address">
+                        Dirección *
+                    </label>
+                    <textarea rows="3" type="text" name="address" id="address" required minlength="2" maxlength="512"
+                    placeholder="Ingrese la dirección..."><%= (locals.old && old.address) ? old.address : "" %></textarea>
+            
+                    <!--Password-->
+                    <label class="user__inputText" for="password">
+                        Contraseña *
+                    </label>
+                    <input type="password" name="password" id="password" required minlength="10" maxlength="64"
+                    placeholder="Ingrese la contraseña...">
+                    <input type="password" name="passwordTry" id="passwordTry" required minlength="10" maxlength="64"
+                    placeholder="Repita la contraseña...">
+            
+                    <!--buttons-->
+                    <div class="flx-ctr">
+                        <button type="reset" class="product__buttons product__buttonClear flx-ctr">
+                            <i class="iconify" data-icon="ic:baseline-restore"></i>
+                            Restablecer
+                        </button>
+                        <button type="submit" class="product__buttons product__buttonSend flx-ctr">
+                            Crear usuario
+                            <i class="iconify" data-icon="ant-design:user-add-outlined"></i>
+                        </button>
+                    </div>    
+                </form>
+            </section>  
+        </main>
+        
+    
+        <!--FOOTER-->
+        <%- include('./partials/footer.ejs') %> 
+        
+    </body>
+</html>

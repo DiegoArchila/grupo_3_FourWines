@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="<%- settingGeneral.languaje.Spanish %>">
+  <!--HEAD-->
+  <%- include("./partials/head.ejs") %>
+  <body>
+    <!--HEADER-->
+    <%- include('./partials/header.ejs')%>
+
+    <!--Menu de categorias-->
+    <nav class="menu-desplegable">
+      <div class="menu-title">
+        <h1>Categorias</h1>
+      </div>
+      <ul class="menu">
+        <li>
+          <a href="#lista-menu">Seleccione una categoria</a>
+        </li>
+        <ul class="lista-menu" id="lista-menu">
+          <% for( let categorie of categories ) { %>
+          <li>
+            <form action="/products/category/<%= categorie.id %>" method="get">
+              <button type="submit"><%= categorie.category %></button>
+            </form>
+          </li>
+          <% } %>
+        </ul>
+      </ul>
+    </nav>
+    <!--Menu de categorias-->
+
+    <!--Productos-->
+    <div class="col-2">
+      <% for( let product of products) { %>
+      <div class="content">
+        <div class="card">
+          <% if (product.mainImage) { %>
+          <div class="card-image">
+            <img
+              src="/img/products/<%= product.mainImage.pathImagen %>"
+              height="300px"
+              width="300px"
+              alt="<%= product.productName %> "
+            />
+          </div>
+          <% } %>
+          <div class="card-body">
+            <div class="grid">
+              <div class="row">
+                <p class="title"><%= product.productName %></p>
+              </div>
+              <div class="column">
+                <div class="cost">
+                  <p class="price"><%= toCOP.format(product.priceFinal) %></p>
+                  <% if (product.discount>0) { %>
+                  <p class="offer"><%= product.discount %> % OFF</p>
+                  <p class="price-normal">
+                    <%= toCOP.format(product.priceGross) %>
+                  </p>
+                  <% } %>
+                </div>
+                <div class="buttons">
+                  <form
+                    action="/products/detail/<%= product.id %>"
+                    method="get"
+                  >
+                    <button type="submit" class="detalle">Ver detalle</button>
+                  </form>
+                  <button class="agregar-carrito">
+                    Agregar al
+                    <span class="iconify" data-icon="bytesize:cart"></span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <% } %>
+    </div>
+    <!--Productos-->
+
+    <!--FOOTER-->
+    <%- include('./partials/footer.ejs') %>
+  </body>
+</html>

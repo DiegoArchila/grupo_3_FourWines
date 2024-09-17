@@ -1,0 +1,71 @@
+/*Header*/
+header {
+  background-color: var(--color-bg-primary);
+}
+
+/* Component: menuBar */
+.menuBar {
+  height: 44px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: space-around;
+  justify-content: center;
+}
+
+/* Option of site: name and menu */
+.menuBar__optionSite {
+  width: 50%;
+}
+
+.menuBar__menu {
+  width: 30%;
+  overflow: hidden;
+}
+
+/* .menuBar__menuLink{
+
+} */
+
+.menuBar__menuIcon {
+  width: 36px;
+  height: 32px;
+  text-align: center;
+  justify-content: center;
+}
+
+.menuBar__nameSite {
+  width: 70%;
+}
+
+.menuBar__nameSiteText {
+  font-size: 1.875rem;
+  text-decoration: overline solid;
+  font-weight: bold;
+  color: var(--color-font-menuBar);
+}
+
+/* Option of User: login, cart shop, search */
+.menuBar__optionUser {
+  width: 50%;
+  justify-content: flex-end;
+  gap: 18px;
+}
+
+.menuBar__optionUserIcon {
+  width: 28px;
+  height: 28px;
+  text-align: center;
+  justify-content: center;
+}
+
+/* Component: banner */
+.banner {
+  width: 100%;
+}
+
+.banner__image {
+  width: 100%;
+  height: auto;
+  max-height: 360px;
+}

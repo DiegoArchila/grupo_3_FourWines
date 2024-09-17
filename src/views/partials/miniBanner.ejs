@@ -1,0 +1,23 @@
+<!--
+    Objects needs
+    minibar{
+        text:Title of the minibar
+        icon:icon of the minibar
+    }
+-->
+<div class="miniBanner__container flx-ctr">
+    <div class="miniBanner flx-ctr">
+        <div class="miniBanner__title">
+            <span class="miniBanner__titleText">
+                <%= minibar.title %>
+            </span>
+        </div>
+        <div class="miniBanner__iconContainer">
+            <i class="iconify miniBanner__icon" data-icon="<%= minibar.icon %>"></i>
+        </div>
+<!-- 
+        <div class="miniBanner__iconContainer">
+            <i class="iconify miniBanner__icon" data-icon="mdi:cash-register"></i>
+        </div> -->
+    </div>
+</div>

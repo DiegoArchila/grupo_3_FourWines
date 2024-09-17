@@ -1,0 +1,288 @@
+<!--
+    Objects needs for works
+
+-->
+<!DOCTYPE html>
+<html lang="<%- settingGeneral.languaje.Spanish %>">
+  <!--HEAD-->
+  <%- include("../partials/head.ejs") %>
+  <body>
+    <!--HEADER-->
+    <%- include('../partials/header.ejs')%>
+
+    <!--MiniBanner-->
+    <!--Config-->
+    <% minibar = { title:"Admin - Productos - Crear producto",
+    icon:"eos-icons:admin-outlined" } %> <%-
+    include('../partials/miniBanner.ejs')%>
+
+    <!--MAIN-->
+    <main>
+      <!--ADMINBAR-->
+      <%- include('../components/adminBar.ejs')%>
+
+      <!--Product view-->
+      <section class="product">
+        <!-- <nav class="product__bar flx-ctr product__titleNewProduct">
+                    <h1 class="product__titleNewProduct">Producto Nuevo</h1>
+                </nav> -->
+
+        <!-- Form new product  -->
+        <form
+          class="product__form"
+          action="/admin/products/create"
+          enctype="multipart/form-data"
+          method="post"
+          id="createProduct"
+        >
+          <!--Container images-->
+          <div class="product__imagesContainer">
+            <!--
+                        <div class="product__imagesSlider flx-ctr">
+                            <!--Here, the cards of the images at pre-upload--
+                            <img class="product__imagen" src="/img/store/products/camas/cama_felder.jpg" alt="Acá descripccion de la imagen">
+                            <img class="product__imagen" src="/img/store/products/colchones/MIGUEL-ANGEL-600x600.png" alt="Acá descripccion de la imagen">
+                            <img class="product__imagen" src="/img/store/products/comedores/carson_6puestos-scaled.jpg" alt="Acá descripccion de la imagen">
+                            <img class="product__imagen" src="/img/store/products/salas/SalaMilan.jpg" alt="Acá descripccion de la imagen">
+                        </div>
+                        -->
+
+            <label class="product__inputText" for="imageMain">
+              Imagen principal <sup class="text-danger">*</sup>
+            </label>
+            <input
+              type="file"
+              name="imageMain"
+              id="imageMain"
+              class="product__imagesButtonAdd"
+              accept="image/png, .jpg, .jpeg, image/gif"
+            />
+            <!--
+            <label class="product__inputText" for="imageMain"> Imagenes </label>
+            <input
+              type="file"
+              name="images"
+              id="images"
+              class="product__imagesButtonAdd"
+              multiple
+              accept="image/png, .jpg, .jpeg, image/gif"
+            />
+
+            <label class="product__inputText" for="product__imagesContainer">
+              Propiedades
+            </label>
+            <textarea
+              class="product__imagesDescription"
+              name="imagenDescription"
+              id=""
+              rows="3"
+              placeholder="Ingrese una descripción de la imagen..."
+            ></textarea>
+            -->
+
+            <!--
+                        <div class="product__imagesIsMainContiner flx-ctr">
+                            <label class="product__inputText">
+                                ¿Es la imagen principal?
+                            </label>
+                            <div class="product__imagesContainerRadio flx-ctr">
+                                <label class="product__inputText" for="mainImagenYes">Si</label>
+                                <input type="radio" class="product__imagen-IsMain" name="isMain" id="mainImagenYes" value="1">
+                            </div>
+                            <div class="product__imagesContainerRadio flx-ctr">
+                                <label class="product__inputText" for="mainImagenNo">No</label>
+                                <input type="radio" class="product__imagen-IsMain" name="isMain" id="mainImagenNo" value="0">
+                            </div>
+                        </div> 
+                        -->
+          </div>
+
+          <!--name-->
+          <label class="product__inputText" for="productName">
+            Nombre <sup class="text-danger">*</sup>
+          </label>
+          <input
+            type="text"
+            name="productName"
+            id="productName"
+            placeholder="Ingrese el nombre del producto..."
+          />
+          <!--Listado de errores-->
+          <div id="productName_errores">
+            <ul></ul>
+          </div>
+
+          <!--Description-->
+          <label class="product__inputText" for="productDescription">
+            Descripción <sup class="text-danger">*</sup>
+          </label>
+          <textarea
+            class="product__inputDescription"
+            name="productDescription"
+            id="productDescription"
+            rows="4"
+            placeholder="Ingrese la descripción del producto..."
+          ></textarea>
+
+          <!--Listado de errores-->
+          <div id="productDescription_errores">
+            <ul></ul>
+          </div>
+
+          <!--Terminate-->
+          <label class="product__inputText" for="productTerminated">
+            Acabado <sup class="text-danger">*</sup>
+          </label>
+          <input
+            type="text"
+            name="productTerminated"
+            id="productTerminated"
+            placeholder="Ingrese el acabado del producto..."
+          />
+
+          <!--Listado de errores-->
+          <div id="productTerminated_errores">
+            <ul></ul>
+          </div>
+
+          <!--SKU-->
+          <label class="product__inputText" for="sku"> Sku </label>
+          <input
+            type="text"
+            name="sku"
+            id="sku"
+            minlength="2"
+            maxlength="64"
+            placeholder="Ingrese el sku del producto..."
+          />
+
+          <!--Category-->
+          <label class="product__inputText" for="categoryId">
+            Categoría <sup class="text-danger">*</sup>
+          </label>
+          <select
+            name="categoryId"
+            id="categoryId"
+            class="product__inputCategory"
+          >
+            <option value="" disabled selected>Seleccione</option>
+            <% categories.forEach(category => { %>
+            <option value="<%= category.id %>"><%= category.category %></option>
+            <% }) %>
+          </select>
+
+          <!--Listado de errores-->
+          <div id="categoryId_errores">
+            <ul></ul>
+          </div>
+
+          <!--Taxes-->
+          <label class="product__inputText" for="taxesId"> Impuestos </label>
+          <select name="taxesId" id="taxesId" class="product__inputTaxes">
+            <option value="" disabled selected>Seleccione</option>
+            <% taxes.forEach(tax => { %>
+            <option value="<%= tax.id %>">
+              <%= tax.taxeName %> %<%= tax.taxeValue %>
+            </option>
+            <% }) %>
+          </select>
+
+          <!--Units-->
+          <label class="product__inputText" for="unitsBuyes">
+            Unidades disponibles <sup class="text-danger">*</sup>
+          </label>
+          <input
+            type="number"
+            class="product__inputUnits"
+            name="unitsBuyes"
+            id="unitsBuyes"
+            placeholder="Ingrese las unidades..."
+          />
+
+          <!--Listado de errores-->
+          <div id="unitsBuyes_errores">
+            <ul></ul>
+          </div>
+
+          <!--Price gross-->
+          <label class="product__inputText" for="priceGross">
+            Precio bruto <sup class="text-danger">*</sup>
+          </label>
+          <input
+            type="number"
+            class="product__inputPriceGross"
+            name="priceGross"
+            id="priceGross"
+            placeholder="Ingrese el precio bruto..."
+          />
+
+          <!--Listado de errores-->
+          <div id="priceGross_errores">
+            <ul></ul>
+          </div>
+
+          <!--Price final-->
+          <label class="product__inputText" for="priceFinal">
+            Precio final <sup class="text-danger">*</sup>
+          </label>
+          <input
+            type="number"
+            class="product__inputPriceFinal"
+            name="priceFinal"
+            id="priceFinal"
+            placeholder="Ingrese el precio final..."
+          />
+
+          <!--Listado de errores-->
+          <div id="priceFinal_errores">
+            <ul></ul>
+          </div>
+
+          <!--discount-->
+          <label class="product__inputText" for="discount">
+            Descuento <sup class="text-danger">*</sup>
+            <span class="product__inputLabelDescription">(automático)</span>
+          </label>
+          <input
+            type="number"
+            disabled
+            class="product__inputDiscount"
+            id="discount"
+            min="0"
+            placeholder="Esperando precio bruto y final..."
+          />
+
+          <label class="product__inputText" for="isActive">
+            Producto activo
+          </label>
+          <input type="checkbox" name="isActive" id="isActive" checked />
+
+          <!--buttons-->
+          <div class="flx-ctr">
+            <button
+              type="reset"
+              class="product__buttons product__buttonClear flx-ctr"
+            >
+              <i class="iconify" data-icon="ic:baseline-restore"></i>
+              Restablecer
+            </button>
+            <button
+              type="submit"
+              class="product__buttons product__buttonSend flx-ctr"
+            >
+              Crear
+              <i class="iconify" data-icon="mdi:cube-send"></i>
+            </button>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <!--FOOTER-->
+    <%- include('../partials/footer.ejs') %>
+
+    <!--Scripts-->
+    <script src="/js/products/createProduct.js" type="module"></script>
+    <script src="/js/validations/validations.js" type="module"></script>
+  </body>
+</html>

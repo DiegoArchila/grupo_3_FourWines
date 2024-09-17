@@ -1,0 +1,26 @@
+/*
+    Flex, Row, justify content and
+    aling content at center. 
+*/
+.flx-ctr {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/*
+    Struct Margin Site 
+*/
+.flx-clm-ctr {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+.has-error {
+  color: rgb(216, 0, 0);
+  font-weight: bold;
+}
